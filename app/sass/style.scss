@@ -1,0 +1,226 @@
+// MAIN STYLE
+
+@import "bootstrap_custom/scss/bootstrap";
+
+
+// PARTIALS
+@import "partials/variables";
+@import "partials/icons";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/button";
+
+// PAGES
+
+// ALL SCREENS ON A DESKTOP scales and LOOKS THE SAME
+//html {
+//  font-size: 7px;
+//  @media (min-width: 1200px) {
+//    font-size: 7px;
+//  }
+//  @media (min-width: 1400px) {
+//    font-size: 8.4px;
+//  }
+//  @media (min-width: 1700px) {
+//    font-size: 10px;
+//  }
+//}
+
+body{
+  font-size: 16px;
+  line-height: 1.2;
+  border-top: 2px solid dodgerblue;
+  height: 100vh;
+}
+
+html{
+  background: dodgerblue;
+}
+
+.Body {
+  transition: all .3s ease;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+.Main {
+  //
+}
+
+a {
+  transition: all .3s linear;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+#bgvid {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translateX(-50%) translateY(-50%);
+  //background: url("../video/SNAPSHOTS/For-Ems.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s opacity;
+}
+
+.FullPage {
+  min-height: fit-content;
+  height: calc(100vh - 9.6rem);
+}
+
+button {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn:focus, .btn.focus {
+  outline: none;
+}
+
+
+
+.shadow{
+  box-shadow: 3px 3px #6f6f6f;
+}
+
+
+.Bot{
+
+  .Roll{
+    height: 0.1px;
+    transition: all .3s linear;
+    overflow: hidden;
+    margin-top: 0.1px;
+
+    & > *{
+      transition: all .3s linear;
+      opacity: 0;
+    }
+
+    &.Show{
+      height: 135px;
+      margin-top: 0;
+      overflow: visible;
+
+      &>*{
+        transition-delay: .3s;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.toggleRoll{
+  position: relative;
+  
+  &.active{
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  &::after {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    display: block;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+}
+
+.Logo{
+  font-size:2.2rem;
+}
+
+a{
+  color: #212529;
+}
+
+.User{
+  color: #212529;
+}
+
+.nav{
+  padding-left: 8px;
+}
+
+
+.switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 50px;
+  margin-right: 4rem;
+  margin-bottom: 0;
+
+  & input {
+    display:none;
+
+    &:checked + .slider {
+      background-color: #5b98d5; //66bb6a
+
+      &:before {
+        transform: translateX(26px);
+      }
+    }
+  }
+
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+
+    &:before {
+      background-color: #fff;
+      bottom: 4px;
+      content: "";
+      height: 16px;
+      left: 4px;
+      position: absolute;
+      transition: .4s;
+      width: 16px;
+    }
+
+    &.round {
+      border-radius: 24px;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.btn-outline-dark:hover {
+  background-color: lighten(#343a40, 5%);
+  border-color: lighten(#343a40, 5%);
+}
+
+
+@import "partials/media";

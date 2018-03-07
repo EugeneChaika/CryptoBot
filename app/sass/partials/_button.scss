@@ -1,0 +1,31 @@
+// BUTTONS
+
+.BtnNice {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.0rem;
+  line-height: 1;
+
+  border-radius: .4rem .4rem 1.2rem .4rem;
+  padding: 1.4rem 5.4rem 1.4rem 4.6rem;
+  border-width: .2rem;
+  border-color: $green;
+  color: $green;
+
+  &:hover {
+    background: $green;
+    border-color: $green;
+  }
+}
+
+.BtnBig {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 1;
+
+  padding: .8rem 10.4rem;
+  border-radius: .8rem;
+  background: $green;
+  border-color: $green;
+}

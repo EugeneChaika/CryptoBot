@@ -1,0 +1,186 @@
+// HEADER
+
+.Header {
+  z-index: 100;
+  margin-top: 1.6rem;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  width: 100%;
+
+  &_Menu {
+
+    .icon {
+      width: 4.0rem;
+    }
+  }
+
+  &_LogoIcon {
+
+    .icon {
+      width: 8.0rem;
+    }
+  }
+
+  &_SignIn {
+    font-size: 2.0rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: $light;
+  }
+
+  &_Number {
+
+    a {
+      display: inline-block;
+      font-size: 2.0rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: $light;
+    }
+  }
+
+  &_Right {
+    margin-top: 2.4rem;
+    padding-right: 2.2rem;
+  }
+
+  &_Left {
+    padding-right: 18.8rem;
+  }
+
+  &_ContactBtn{
+  //
+  }
+
+  .Help {
+    display: flex;
+    align-items: center;
+    padding-right: 1.6rem;
+
+    span {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #95989a;
+      padding-right: 1.6rem;
+    }
+  }
+
+  .User {
+    display: flex;
+    align-items: center;
+
+    &_Ava {
+
+      & > img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        background: #efefef;
+      }
+    }
+
+    &_Name {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: $blue;
+      padding-left: 1.6rem;
+      padding-right: 2.4rem;
+    }
+  }
+}
+
+.HeaderHome{
+
+  .Header_Right{
+    margin-top: .8rem;
+  }
+}
+
+.HeaderMobile {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #F2F2F2;
+  height: 48px;
+  display: flex;
+  align-items: center;
+
+  &_Menu {
+  //
+  }
+
+  &_Title {
+    text-align: center;
+    color: $dark;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+
+  &_Profile {
+    text-align: right;
+  }
+}
+
+.Header_Language {
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .dropdown-menu {
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 15px 12px 10px;
+    background-color: $light;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid $light;
+    }
+  }
+
+  .dropdown-menu.show {
+    top: 100% !important;
+    left: 50% !important;
+    transform: translate(-50%, 9px) !important;
+  }
+
+  .dropdown-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #787979;
+    margin-bottom: 13px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: #444545
+    }
+  }
+
+  .dropdown-item.active,
+  .dropdown-item:active,
+  .dropdown-item:hover {
+    background: none;
+  }
+}
+

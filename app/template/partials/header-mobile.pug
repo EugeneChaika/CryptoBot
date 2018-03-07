@@ -1,0 +1,19 @@
+header.HeaderMobile.d-sm-none
+    .container-fluid
+        .row.align-items-center
+            .col
+                .HeaderMobile_Menu(data-toggle="modal" data-target="#navModal")
+                    .Icon.Icon-MenuMobile
+                        img(src="img/icons-svg/ic-hamburger-mob-01.svg" alt="")
+            .col-auto
+                .HeaderMobile_Title
+                    span #{pageTitle}
+            .col
+                #cartToggleMob.HeaderMobile_Profile
+                    a(href="javascript:void(0);")
+                        .Icon.Icon-Profile
+                            if (pageTitle === 'Shop')
+                                img(src="img/icons-svg/ic-cart-mobile-full-01.svg" alt="")
+                            else
+                                img(src="img/icons-svg/ic-profile-01.svg" alt="")
+

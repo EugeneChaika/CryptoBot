@@ -1,0 +1,54 @@
+.icon {
+  display: inline-block;
+}
+
+.Icon {
+  display: inline-block;
+
+  &-Language {
+    width: 4.0rem;
+  }
+
+  &-LogoSmall {
+    width: 3.02rem;
+  }
+
+  &-RoyalCanin {
+    width: 9.6rem;
+  }
+
+  &-MediSapiens {
+    width: 9.8rem;
+  }
+
+  &-Genoscoper {
+    width: 11.0rem;
+  }
+
+  &-MenuMobile {
+    width: 14px;
+  }
+
+  &-Profile {
+    width: 24px;
+  }
+
+  &-Help{
+    width: 4rem;
+  }
+
+  &-Cart{
+    width: 3.2rem;
+  }
+
+  &-Remove{
+    width: 2.4rem;
+  }
+
+  &-Rss{
+    width: 1.8rem;
+  }
+  &-ArrowDown{
+    width: 14px;
+  }
+}

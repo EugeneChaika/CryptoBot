@@ -1,0 +1,38 @@
+header.Header.d-sm-flex.d-none.HeaderHome
+    .container-fluid
+        .row.justify-content-between
+            .col-auto
+                .Header_Left
+                    .row.align-items-center
+                        .col
+                            a.Header_Menu(href="javascript:void(0);" data-toggle="modal" data-target="#navModal")
+                                .icon
+                                    img(src="img/icons-svg/ic-hamburger-menu-01-white.svg" alt="")
+                        .col
+                            a.Header_LogoBlock(href="javascript:void(0);" data-toggle="modal" data-target="#navModal")
+                                .Header_LogoIcon
+                                    .icon
+                                        img(src="img/icons-svg/mcd-logo-navi-01-white.svg" alt="")
+                        .col
+                            .Header_Language
+                                .dropdown.show
+                                    a#dropdownLang.dropdown-toggle(href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                        .Icon.Icon-Language
+                                            img(src="img/icons-svg/ic-language-01-white.svg" alt="")
+                                    .dropdown-menu(aria-labelledby="dropdownLang")
+                                        a.dropdown-item(href="javascript:void(0);") English
+                                        a.dropdown-item(href="javascript:void(0);") Suomi
+                                        a.dropdown-item(href="javascript:void(0);") Русский
+            .col
+                .Header_Right
+                    .row.align-items-center.justify-content-end
+                        .col-auto
+                            a.Header_SignIn(href="javascript:void(0);")
+                                | SIGN IN
+                        .col-auto
+                            .Header_Number
+                                a(href="tel:+3580503678282") +358 (0) 50 3678 282
+                        .w-100.d-block.d-md-none
+                        .col-auto
+                            .Header_ContactBtn
+                                a.btn.btn-outline-success.BtnNice(href="javascript:void(0);") CONTACT
