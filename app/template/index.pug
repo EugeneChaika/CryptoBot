@@ -3,7 +3,9 @@ extends partials/layout
 block append config
     - var bodyClass = 'Body'
     - var pageTitle = 'CryptoBot'
-    - var NavTabs = ['Подьем в %','Отклонение в %','История','Настройки']
+    - var NavTabs = ['Боты','История','Настройки']
+    - var Bots = ['BTC/LTC','ETH/BTC','LTC/USD']
+    - var Currency = ['BNB/USDT','NEO/USDT','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','NEO/USDT','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','NEO/USDT','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC']
 
 //- append prepend each item in items mixin product(pars) +product(Pars)
 
@@ -14,9 +16,9 @@ block header
 block main
     main.Main
         .container.pt-4
-            .row.justify-content-center
+            .row
 
-                .col-sm-4
+                .col-md-2
                     .row
                         #pills-tab.nav.nav-pills.mb-3.col-12(role="tablist")
                             each val,i in NavTabs
@@ -24,50 +26,106 @@ block main
                                     |#{val}
 
 
-                .col-sm-8
+                .col-md-8
 
                     #pills-tabContent.tab-content
                         each val,i in NavTabs
-                            .tab-pane.fade(id='pill'+i role="tabpanel" aria-labelledby="tab"+i)
+                            if i === 0
+                                .tab-pane.fade(id='pill'+i role="tabpanel" aria-labelledby="tab"+i)
 
-                                .row
-                                    .col-12
-                                        .w-100.btn.btn-outline-dark.rounded-0.mb-2.shadow
-                                            |Создать бота
+                                    .row
+                                        .col-12
+                                            .w-100.btn.btn-outline-dark.rounded-0.mb-2.shadow
+                                                |Создать бота
 
-                                .row.rounded-0.pt-2.pb-2
+                                    .row.rounded-0.pt-2.pb-2
 
-                                    each val,n in ['BTC/LTC','ETH/BTC','LTC/USD']
+                                        each val,n in Bots
 
-                                        .Bot.col-12.d-flex.mb-2.flex-wrap
+                                            .Bot.col-12.d-flex.mb-2.flex-wrap
 
-                                            .toggleRoll.btn.btn-outline-dark.rounded-0.w-100.text-left.d-flex.align-items-center.justify-content-between
-                                                | #{val}
+                                                .toggleRoll.btn.btn-outline-dark.rounded-0.w-100.text-left.d-flex.align-items-center.justify-content-between
+                                                    | #{val}
 
-                                                label.switch(for="checkbox"+i+n)
-                                                    input(id='checkbox'+i+n type="checkbox")
-                                                    .slider.round
+                                                    label.switch(for="checkbox"+i+n)
+                                                        input(id='checkbox'+i+n type="checkbox")
+                                                        .slider.round
 
-                                            .Roll.border.border-top-0.border-dark.w-100
-                                                .col-12.mb-2
-                                                    .row.pt-2.pb-2
-                                                        .col-6
-                                                            .btn-group.dropright.w-100
-                                                                .btn.btn-outline-dark.rounded-0.w-100 Выбор пары
-                                                                .btn.btn-outline-dark.rounded-0.dropdown-toggle.dropdown-toggle-split(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-                                                                    span.sr-only Toggle Dropdown
-                                                                .dropdown-menu.rounded-0
-                                                                    each val in ['BNB/USDT','NEO/USDT','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC','AMB/BTC']
-                                                                        a.dropdown-item(href="#") #{val}
+                                                .Roll.border.border-top-0.border-dark.w-100
+                                                    .col-12.mb-2
+                                                        .row.pt-2.mb-2
+                                                            .col-sm-6.mb-2
+                                                                .btn-group.w-100
+                                                                    .btn.btn-outline-dark.rounded-0.w-100.Input
+                                                                        input(type='text' placeholder='Выбор пары')
+                                                                    .btn.btn-outline-dark.rounded-0.dropdown-toggle.dropdown-toggle-split(data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                                                        span.sr-only Toggle Dropdown
+                                                                    .dropdown-menu.dropdown-menu-right.rounded-0.w-100
+                                                                        each val in Currency
+                                                                            a.dropdown-item(href="#") #{val}
+                                                            .StopLoss.col-sm-6.mb-2
+                                                                .row
+                                                                    .col-6.pt-2.text-center
+                                                                        | Stop Loss
+                                                                    .col-6
+                                                                        .btn.btn-outline-dark.rounded-0.w-100.Input
+                                                                            input(type='number' placeholder='0.000')
 
-                                                        .col-12.pb-2.pt-2
-                                                            | Значение подъема в %
-                                                        .col-12.mb-4
-                                                            .row
-                                                                each val in ['1%','2%','3%','4%']
-                                                                    .col
-                                                                        .w-100.btn.btn-outline-dark.rounded-0.shadow
-                                                                            | #{val}
+                                                        .row
+
+                                                            .Amount.col-sm-6.mb-2
+                                                                .row
+                                                                    .col-6.pb-2.pt-2.text-center
+                                                                        | Amount
+                                                                    .col-6.mb-2
+                                                                        .btn.btn-outline-dark.rounded-0.w-100.Input
+                                                                            input(type='number' placeholder='0.000')
+                                                            .col-12
+                                                                .row
+                                                                    .col-12.mb-2
+                                                                        .row
+                                                                            each val in ['25%','50%','75%','100%']
+                                                                                .col-3
+                                                                                    .w-100.btn.btn-outline-dark.rounded-0.shadow
+                                                                                        | #{val}
+
+
+
+
+                                                        .row
+
+                                                            .col-12.pb-2.pt-2
+                                                                | Значение подъема в %
+                                                            .col-12.mb-2
+                                                                .row
+                                                                    each val in ['1%','2%','3%','4%']
+                                                                        .col
+                                                                            .w-100.btn.btn-outline-dark.rounded-0.shadow
+                                                                                | #{val}
+
+                                                        .row
+                                                            .col-12.pb-2.pt-2
+                                                                | Значение отклонения в %
+                                                            .col-12.mb-4
+                                                                .row
+                                                                    each val in ['10%','15%','20%','25%']
+                                                                        .col
+                                                                            .w-100.btn.btn-outline-dark.rounded-0.shadow
+                                                                                | #{val}
+
+                                                        .row.justify-content-end
+                                                            .col-3.pt-2
+                                                                .w-100.btn.btn-outline-success.rounded-0.shadow
+                                                                    | Apply
+
+                            else
+                                .tab-pane.fade(id='pill' + i role="tabpanel" aria-labelledby="tab" + i)
+
+                                    .row
+                                        .col-12
+                                            .w-100.btn.btn-outline-dark.rounded-0.mb-2.shadow
+                                                | Tab #{i + 1}
+
 
 
 

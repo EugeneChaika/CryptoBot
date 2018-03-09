@@ -19,12 +19,11 @@ html(lang="en")
         title #{pageTitle}
 
     body
-
-        block header
-            h1 Header
-
         block body-wrapper
             div(class='' + bodyClass)
+
+                block header
+                    h1 Header
 
                 block main
                     h1 Main

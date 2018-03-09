@@ -1,12 +1,15 @@
 // MEDIA
 
 @media (max-width: 1199px) {
-
-  #bgvid {
-    transform: translateX(-38%) translateY(-50%);
-  }
+//
 }
 
 @media (max-width: 575px) {
-//
+  .Bot{
+    .Roll{
+      &.Show{
+        height: 450px;
+      }
+    }
+  }
 }
