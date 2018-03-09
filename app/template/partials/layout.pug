@@ -19,21 +19,21 @@ html(lang="en")
         title #{pageTitle}
 
     body
-        block body-wrapper
-            div(class='' + bodyClass)
 
-                block header
-                    h1 Header
+        div(class='' + bodyClass)
 
-                block main
-                    h1 Main
-                    h3 Its a layout of page
+            block header
+                h1 Header
 
-                block footer
-                    h1 Footer
+            block main
+                h1 Main
+                h3 Its a layout of page
 
-                block nav-modal
-                    //-include nav-modal
+            block footer
+                h1 Footer
+
+            block nav-modal
+                //-include nav-modal
 
         //-  SCRIPTS  //
         script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")

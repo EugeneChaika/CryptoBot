@@ -19,10 +19,10 @@ block main
             .row
 
                 .col-md-2
-                    .row
+                    .row.flex-column
                         #pills-tab.nav.nav-pills.mb-3.col-12(role="tablist")
                             each val,i in NavTabs
-                                .NavEl.col-12.btn.btn-outline-dark.rounded-0.text-left(id='tab' + i, data-toggle="pill", href="#pill" + i, role="tab", aria-controls="pill" + i)
+                                .NavEl.col-12(id='tab' + i, data-toggle="pill", href="#pill" + i, role="tab", aria-controls="pill" + i)
                                     |#{val}
 
 
@@ -35,8 +35,9 @@ block main
 
                                     .row
                                         .col-12
-                                            .w-100.btn.btn-outline-dark.rounded-0.mb-2.shadow
-                                                |Создать бота
+                                            .w-100.btn.btn-outline-dark.rounded-0.mb-2.shadow.ShinyBtn
+                                                span
+                                                    | Создать бота
 
                                     .row.rounded-0.pt-2.pb-2
 
